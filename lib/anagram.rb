@@ -8,6 +8,11 @@ class String
     second_word.sort!()
     sorted_words.push(first_word)
     sorted_words.push(second_word)
-    sorted_words
+    if first_word == second_word
+      "#{sorted_words}
+      #{input} and {#{value} are anagrams."
+    else "#{sorted_words}
+      #{input} and #{value} are not anagrams."
+    end
   end
 end
