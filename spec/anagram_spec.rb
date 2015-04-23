@@ -2,7 +2,8 @@ require('rspec')
 require('anagram')
 
 describe('String#anagram') do
-  it('takes two words and breaks into arrays') do
-    expect(('act').anagram('cat')).to(eq([['a', 'c', 't'], ['c','a','t']]))
-  end
+
+  it('breaks two words into arrays and sorts those arrays alphabetically') do
+    expect(('dog').anagram('cat')).to(eq([['d', 'g', 'o'], ['a', 'c', 't']]))
+end
 end
