@@ -13,4 +13,9 @@ end
   it('takes two words and tells the user if they are not anagrams') do
     expect(('dog').anagram('cat')).to(include("are not anagrams"))
   end
+
+  it('takes list of words and tells the user which ones are anagrams') do
+    expect(('dog').anagram('odg, god, cat')).to(include('odg, god are anagrams'))
+  end
+
 end

@@ -1,18 +1,21 @@
 class String
-  define_method(:anagram) do |value|
+  define_method(:anagram) do |values|
     input = self
     sorted_words = []
-    first_word = input.split("")
-    second_word = value.split("")
-    first_word.sort!()
-    second_word.sort!()
-    sorted_words.push(first_word)
-    sorted_words.push(second_word)
-    if first_word == second_word
-      "#{sorted_words}
-      #{input} and {#{value} are anagrams."
-    else "#{sorted_words}
-      #{input} and #{value} are not anagrams."
+    compared_word = []
+    array_of_anagrams = []
+    array_of_failure = []
+    first_word = input.split("").sort!
+    other_words = values.split(", ")
+    other_words.each() do |word|
+      compared_word = word.split("")
+      if compared_word.sort! == first_word
+        array_of_anagrams.push(word)
+      else array_of_failure.push(word)
+      end
     end
+    anagram_list = array_of_anagrams.join(", " )
+    fail_list = array_of_failure.join(", ")
+    "#{anagram_list} are anagrams of #{input}, #{fail_list} are not"
   end
 end
