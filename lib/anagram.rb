@@ -16,12 +16,13 @@ class String
     end
     anagram_list = array_of_anagrams.join(", " )
     fail_list = array_of_failure.join(", ")
-    if array_of_anagrams.length >= 1 && array_of_failure.length >=1
+    if array_of_anagrams.count > 1 && array_of_failure.count > 1
     "#{anagram_list.capitalize} are anagrams of #{input} and #{fail_list} are not"
-  elsif array_of_anagrams.length >=1 && array_of_failure.length == 1
+  elsif array_of_anagrams.count > 1  && array_of_failure.count == 1
     "#{anagram_list.capitalize} are anagrams of #{input} and #{fail_list} is not"
-  elsif array_of_anagrams.length == 1 && array_of_failure.lenght >= 1
+  elsif array_of_anagrams.count == 1 && array_of_failure.count > 1
     "#{anagram_list.capitalize} is an anagram of #{input} and #{fail_list} are not"
   else "#{anagram_list.capitalize} is an anagram of #{input} and #{fail_list} is not"
+  end
   end
 end
